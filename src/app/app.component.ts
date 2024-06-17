@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "./components/footer/footer.component";
 import { CommonModule } from '@angular/common';
-  
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -13,12 +13,13 @@ import { CommonModule } from '@angular/common';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [
-      RouterOutlet, 
-      HeaderComponent, 
-      FormsModule, 
-      ReactiveFormsModule, 
-      FooterComponent, 
+      RouterOutlet,
+      HeaderComponent,
+      FormsModule,
+      ReactiveFormsModule,
+      FooterComponent,
       CommonModule,
+      HttpClientModule
     ]
 })
 export class AppComponent {

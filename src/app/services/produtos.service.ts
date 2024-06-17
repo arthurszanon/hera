@@ -1,24 +1,21 @@
-import { Injectable } from '@angular/core';
-import { produtos } from '../interfaces/produtos';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
-
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import {produtos} from '../interfaces/produtos';
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutosService {
-  private readonly APIproducts = 'http://localhost:3000/produtos';
+export class ProdutoService {
+
+  private readonly urlBase: string = 'http://localhost:8087/api';
 
   constructor(private http: HttpClient) { }
-  list () {
-    return this.http.get<[produtos]>(this.APIproducts)
-      .pipe(
-        tap(console.log)
-      );
+
+  buscarProdutos(): Observable<any> {
+    return this.http.get<any[]>(`${this.urlBase + '/produtos'}`);
   }
-  getById (id: number) {
-    return this.list()
-              .toPromise()
-              .then((response: [produtos]) => response.find((item: produtos) => item.id === id));
+
+  buscarPorId(id: number): Observable<any> {
+    return this.http.get(this.urlBase + '/produtos/?codigo=' + id);
   }
 }

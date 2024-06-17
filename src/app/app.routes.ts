@@ -7,6 +7,7 @@ import { MatconComponent } from './components/matcon/matcon.component';
 import { LoginComponent } from './components/login/login.component';
 import { ClientesCadastradosComponent } from './components/clientes-cadastrados/clientes-cadastrados.component';
 import { ShopComponent } from './components/shop/shop.component';
+import {AuthGuard} from './guard/auth.guard';
 
 
 export const routes: Routes = [
@@ -20,7 +21,8 @@ export const routes: Routes = [
     },
     {
         path:"adm",
-        component: HomeAdmComponent
+        component: HomeAdmComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:"armarinho",
@@ -36,7 +38,8 @@ export const routes: Routes = [
     },
     {
         path:"clientes-cadastrados",
-        component: ClientesCadastradosComponent
+        component: ClientesCadastradosComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: "shop",

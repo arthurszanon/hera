@@ -3,7 +3,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { produtos } from '../../../interfaces/produtos';
-import { ProdutosService } from '../../../services/produtos.service';
+import { ProdutoService } from '../../../services/produtos.service';
 import { Router, RouterLink, RouterModule, Routes } from '@angular/router';
 
 
@@ -18,37 +18,37 @@ import { Router, RouterLink, RouterModule, Routes } from '@angular/router';
   ],
   templateUrl: './carousel-model.component.html',
   styleUrl: './carousel-model.component.css',
-  providers:[ProdutosService, RouterLink, Router]
+  providers:[ProdutoService, RouterLink, Router]
 })
 export class CarouselModelComponent implements OnInit{
-  
+
   products: produtos[] = [];
 
   responsiveOptions: any[] | undefined;
 
-  constructor(private produtosService: ProdutosService) {}
+  constructor(private produtosService: ProdutoService) {}
 
   ngOnInit() {
-    this.produtosService.list()
-    .subscribe(dados => this.products = dados);
+    this.produtosService.buscarProdutos().subscribe((res: any) => {
+      this.products = res;
+    });
 
-
-      this.responsiveOptions = [
-          {
-              breakpoint: '1199px',
-              numVisible: 1,
-              numScroll: 1
-          },
-          {
-              breakpoint: '991px',
-              numVisible: 2,
-              numScroll: 1
-          },
-          {
-              breakpoint: '767px',
-              numVisible: 1,
-              numScroll: 1
-          }
-      ];
+    this.responsiveOptions = [
+      {
+          breakpoint: '1024px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2,
+          numScroll: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1,
+          numScroll: 1
+      }
+    ];
   }
 }
