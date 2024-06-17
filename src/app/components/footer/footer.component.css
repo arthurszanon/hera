@@ -1,0 +1,11 @@
+.footer{
+    padding: 10px;
+    background: var(--cor-01);
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer h3{
+    font-weight: 200;
+    font-size: 17px;
+}

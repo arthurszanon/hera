@@ -1,0 +1,21 @@
+ <div class="card-adm" id="card-adm" (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+  <div class="card flex justify-content-center">
+    <div class="flex flex-column gap-2">
+      <h2 class="formulario">Formulário de Edição do Banner 01</h2>
+        <label for="username" class="formulario-label">Pré-Título</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+        <small id="username-help">O pré-título original é: ACOMPANHE OS PRODUTOS DO NOSSO
+        </small>
+        <label for="username" class="formulario-label">Título</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+        <small id="username-help">O título original é: ARMARINHO
+        </small>
+        <label for="username" class="formulario-label">Botão</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+        <small id="username-help">O texto original é: VEJA NOSSAS NOVIDADES
+        </small>
+        <p-button label="Alterar" [loading]="loading" (onClick)="load()" class="botao"></p-button>
+    </div>
+  </div>
+</div>
+ 

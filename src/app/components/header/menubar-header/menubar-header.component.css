@@ -1,0 +1,16 @@
+.logo{
+    width: 70px;
+    margin-right: 20px;
+}
+
+.font-size{
+    font-size: 90px;
+}
+
+@media screen and (min-width:1500px) {
+    .logo{
+        width: 100px;
+    }
+
+    
+}

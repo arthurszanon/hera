@@ -1,0 +1,21 @@
+
+
+.formulario{
+    width: 320px;   
+    display: block;
+    margin: 0 auto;
+    padding: 40px;
+    background: #F8F7F7;
+    border-radius: 30px;
+}
+
+.titulo h2{
+    font-weight: 300;
+    text-align: center;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.form{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,263 @@
+{
+  "card-inicial": [
+    { "preTituloUm": "ACOMPANHE OS PRODUTOS DO NOSSO", "tituloUm": "ARMARINHO", "botaoUm": "VEJA NOSSAS NOVIDADES", "preTituloDois": "ACOMPANHE NOSSOS PRODUTOS DE ", "tituloDois": "MATERIAIS DE CONSTRUÇÃO", "botaoDois": "VEJA NOSSAS NOVIDADES"}
+  ],
+
+    "banner": [
+      {
+        "id": 99,
+        "itemImageSrc": "./assets/images/products/produtos.png",
+        "thumbnailImageSrc": "./assets/images/products/produtos.png",
+        "alt": "Description",
+        "title": "Imagem"
+      },
+      {
+        "id": 98,
+        "itemImageSrc": "./assets/images/products/produtos.png",
+        "thumbnailImageSrc": "./assets/images/products/produtos.png",
+        "alt": "Description",
+        "title": "Imagem"
+      }
+    ],
+    "produtos": [
+      {
+        "id": 1,
+        "code": "f230fh0g3",
+        "name": "Camisa",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.00,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 2,
+        "code": "f230fh0g3",
+        "name": "Camisa 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.00,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 3,
+        "code": "f230fh0g3",
+        "name": "Camisa 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.00,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 4,
+        "code": "f230fh0g3",
+        "name": "Camisa 4",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.00,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 5,
+        "code": "f230fh0g3",
+        "name": "Camisa 5",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 6,
+        "code": "f230fh0g3",
+        "name": "Camisa 6",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 7,
+        "code": "f230fh0g3",
+        "name": "Camisa 7",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 8,
+        "code": "f230fh0g3",
+        "name": "Camisa 8",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 9,
+        "code": "f230fh0g3",
+        "name": "Camisa 9",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 10,
+        "code": "f230fh0g3",
+        "name": "Camisa 10",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 11,
+        "code": "f230fh0g3",
+        "name": "Camisa 11",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      },
+      {
+        "id": 12,
+        "code": "f230fh0g3",
+        "name": "Camisa 12",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum metus, eu hendrerit risus porttitor nec. Morbi quis feugiat tortor, sit amet varius purus. ",
+        "image": "./assets/images/products/products.png",
+        "price": 65.50,
+        "category": "Camisetas",
+        "quantity": 20
+      }
+    ],
+    "categoria": [
+      {
+        "label": "login",
+        "url": "/login"
+      },
+      {
+        "label": "MatCon",
+        "url": "/matcon",
+        "items": [
+          {
+            "label": "Camisetas",
+            "items": [
+              { "label": "Camisas Polo" },
+              { "label": "Camisetas Básicas" }
+            ]
+          },
+          { "label": "Calças" },
+          { "label": "Vestidos" }
+        ]
+      },
+      {
+        "label": "Armarinho",
+        "url": "/armarinho",  
+        "items": [
+          { "label": "Celulares" },
+          { "label": "Televisores",
+            "items": [
+              { "label": "Smart TVs" },
+              { "label": "LED TVs" }
+            ]
+          },
+          { "label": "Notebooks" }
+        ]
+      }
+    ],
+    "text-armarinho": [
+      {
+        "tituloUm": "Mais Vendidos", "tituloDois": "Promoções", "tituloTres": "Materiais Hidráulicos"
+      }
+    ],
+    "text-matcon": [
+      {
+        "tituloUm": "Mais Vendidos", "tituloDois": "Promoções", "tituloTres": "Materiais Hidráulicos"
+      }
+    ],
+    "clientes-cadastrados": [
+      {
+        "key": "0",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "1",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "2",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "3",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "4",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "5",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "6",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "7",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "8",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "9",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "10",
+        "label": "Documents",
+        "data": "Documents Folder",
+        "icon": "pi pi-fw pi-inbox"
+      },
+      {
+        "key": "11",
+        "label": "Events",
+        "data": "Events Folder",
+        "icon": "pi pi-fw pi-calendar"
+      }
+    ]
+  }

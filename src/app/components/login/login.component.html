@@ -1,0 +1,19 @@
+<div class="box">
+    <div class="title">
+        <h2>Faça Login</h2>
+    </div>
+    <div class="card justify-content-center">
+        <p-floatLabel>
+            <h4>Usuário</h4>
+            <input pInputText id="username" [(ngModel)]="email" />
+        </p-floatLabel>
+    </div>
+    <div class="card justify-content-center senha">
+        <h4>Senha</h4>
+        <p-password [(ngModel)]="senha" [feedback]="false" />
+    </div>
+    <div class="card flex justify-content-center">
+        <p-button label="Entrar" [style]="{'background': 'var(--cor-01)', 'borderColor': 'var(--cor-01)', 'marginTop': '20px'}"/>
+    </div>
+</div>
+

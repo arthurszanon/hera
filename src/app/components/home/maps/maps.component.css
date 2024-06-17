@@ -1,0 +1,38 @@
+.telefone{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container{
+    padding-top: 120px;
+    text-align: center;
+}
+
+h3{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+h4{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.faleconosco h3{
+    margin: 0;
+}
+
+.mapa{
+    padding-bottom: 70px;
+}
+
+@media screen and (min-width: 1200px){
+    .container{
+        margin-left: 2rem;
+    }
+    h3{
+        font-size: 45px;
+    }
+}
