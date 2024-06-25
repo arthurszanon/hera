@@ -1,3 +1,5 @@
+import {Imagem} from './Imagem';
+
 export interface produtos{
     id: number,
     code: string,
@@ -6,5 +8,6 @@ export interface produtos{
     image: string,
     price: number,
     category: string,
-    quantity: number
+    quantity: number,
+    imagens: Imagem[]
 }
