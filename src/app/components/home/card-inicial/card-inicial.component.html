@@ -1,19 +1,19 @@
-<section class="card-inicial" *ngFor="let card of card">
+<section class="card-inicial">
     <div>
         <div  class="card-inicial-1 shadow-7">
-            <h4 >{{ card.preTituloUm }}</h4>
-            <h3>{{ card.tituloUm }}</h3>
+            <h4 >ACOMPANHE OS PRODUTOS DO NOSSO</h4>
+            <h3>ARMARINHO</h3>
             <div class="botao">
-                <p-button label="{{ card.botaoUm }}"  [style]="{backgroundColor:'var(--branco)', color:'var(--cor-01)'}" routerLink="/armarinho"></p-button>
+                <p-button label="VEJA NOSSAS NOVIDADES"  [style]="{backgroundColor:'var(--branco)', color:'var(--cor-01)'}" routerLink="/produtos"></p-button>
             </div>
         </div>
     </div>
     <div >
-        <div class="card-inicial-2 shadow-7">
-            <h4 >{{card.preTituloDois}}</h4>
-            <h3>{{card.tituloDois}}</h3>
+        <div class="card-inicial-1 shadow-7">
+            <h4 >ACOMPANHE NOSSOS PRODUTOS DE</h4>
+            <h3>DEPOSITO</h3>
             <div class="botao">
-                <p-button label="{{ card.botaoDois }}" routerLink="/matcon" [style]="{backgroundColor:'var(--branco)', color:'var(--cor-01)'}"></p-button>
+                <p-button label="VEJA NOSSAS NOVIDADES" routerLink="/produtos" [style]="{backgroundColor:'var(--branco)', color:'var(--cor-01)'}"></p-button>
             </div>
         </div>
     </div>

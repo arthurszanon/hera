@@ -7,6 +7,8 @@ import { matconcategoria } from '../../../interfaces/matconcategoria';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LoginComponent } from "../../login/login.component";
+import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -16,21 +18,41 @@ import { LoginComponent } from "../../login/login.component";
     templateUrl: './menubar-header.component.html',
     styleUrl: './menubar-header.component.css',
     providers: [CategoriasService],
-    imports: [
-        MenubarModule,
-        CommonModule,
-        HttpClientModule,
-        NgFor,
-        RouterLink,
-        LoginComponent
-    ]
+  imports: [
+    MenubarModule,
+    CommonModule,
+    HttpClientModule,
+    NgFor,
+    RouterLink,
+    LoginComponent,
+    ButtonModule,
+    InputTextModule
+  ]
 })
 export class MenubarHeaderComponent implements OnInit{
-  items: matconcategoria[] = [];
+  items: any[] = [
+    {
+      'label': 'Home',
+      'icon': 'pi pi-fw pi-home',
+      'routerLink': ['/']
+    },
+    {
+      'label': 'produtos',
+      'icon': 'pi pi-fw pi-shopping-cart',
+      'routerLink': ['/produtos'],
+    },
+    {
+      'label': 'Login',
+      'routerLink': ['/login'],
+    },
+    {
+      'label': 'Cadastrar',
+      'routerLink': ['/cadastro'],
+    },
+  ];
   constructor (private service: CategoriasService) {}
 
   ngOnInit() {
-    this.service.list()
-    .subscribe(dados => this.items = dados);
-}
+
+  }
 }

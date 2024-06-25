@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
   ],
   templateUrl: './card-inicial.component.html',
   styleUrl: './card-inicial.component.css',
-  providers: [CardInicialService, 
+  providers: [CardInicialService,
   ]
 })
 export class CardInicialComponent implements OnInit {
@@ -30,8 +30,7 @@ export class CardInicialComponent implements OnInit {
   constructor (private service: CardInicialService) {}
 
   ngOnInit(): void {
-    this.service.list() 
-    .subscribe(dados => this.card = dados);
+
   }
 
 }

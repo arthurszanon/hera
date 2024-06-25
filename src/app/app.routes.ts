@@ -8,41 +8,46 @@ import { LoginComponent } from './components/login/login.component';
 import { ClientesCadastradosComponent } from './components/clientes-cadastrados/clientes-cadastrados.component';
 import { ShopComponent } from './components/shop/shop.component';
 import {AuthGuard} from './guard/auth.guard';
+import {CadastroComponent} from './components/cadastro/cadastro.component';
 
 
 export const routes: Routes = [
-    {
-        path:"",
-        component: HomeComponent
-    },
-    {
-        path:"product/:id",
-        component: ProductPageComponent
-    },
-    {
-        path:"adm",
-        component: HomeAdmComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path:"armarinho",
-        component: ArmarinhoComponent
-    },
-    {
-        path:"matcon",
-        component: MatconComponent
-    },
-    {
-        path:"login",
-        component: LoginComponent
-    },
-    {
-        path:"clientes-cadastrados",
-        component: ClientesCadastradosComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: "shop",
-        component: ShopComponent
-    },
+  {
+      path:"",
+      component: HomeComponent
+  },
+  {
+      path:"produto/:id",
+      component: ProductPageComponent
+  },
+  {
+      path:"adm",
+      component: HomeAdmComponent,
+      canActivate: [AuthGuard]
+  },
+  {
+      path:"armarinho",
+      component: ArmarinhoComponent
+  },
+  {
+      path:"matcon",
+      component: MatconComponent
+  },
+  {
+      path:"login",
+      component: LoginComponent
+  },
+  {
+    path:"cadastro",
+    component: CadastroComponent
+  },
+  {
+      path:"clientes-cadastrados",
+      component: ClientesCadastradosComponent,
+      canActivate: [AuthGuard]
+  },
+  {
+      path: "shop",
+      component: ShopComponent
+  },
 ];
