@@ -14,13 +14,18 @@ import { NgModel } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { FileUploadModule } from 'primeng/fileupload';
+import {UsuarioService} from '../../../services/usuario.service';
+import {InputTextModule} from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
+import {DropdownModule} from 'primeng/dropdown';
+import {RepresentanteService} from '../../../services/representante.service';
 
 
 @Component({
   selector: 'app-clientes-adm',
   standalone: true,
-  imports: [TableModule, CommonModule, ButtonModule,DialogModule,ConfirmDialogModule,
-    FormsModule,InputNumberModule,ToastModule,ToolbarModule,RouterLink, FileUploadModule,],
+  imports: [TableModule, CommonModule, ButtonModule, DialogModule, ConfirmDialogModule,
+    FormsModule, InputNumberModule, ToastModule, ToolbarModule, RouterLink, FileUploadModule, InputTextModule, RippleModule, DropdownModule,],
   templateUrl: './clientes-adm.component.html',
   styles: [
     `:host ::ng-deep .p-dialog .product-image {
@@ -36,34 +41,62 @@ export class ClientesAdmComponent implements OnInit {
   submitted: boolean = false;
   clientDialog: boolean = false;
   selectedClients!: clientes[] | null;
+  visible: boolean = false;
 
+  clientes: any[] = [];
+  cliente: any = {};
 
+  representantes: any[] = [];
 
-  cliente!: clientes[];
-  Cliente!: clientes; 
+  tabelaPrecos = [
+    { label: 'Preço capital', value: 'A' },
+    { label: 'Preço interior', value: 'B' },
+    { label: 'Preço capital promoção', value: 'C' },
+    { label: 'Preço interior promoção', value: 'D' },
+  ];
 
-  constructor(private clientesCadastradosService: ClientesCadastradosService, private router: Router) {}
+  constructor(private usuarioService:UsuarioService, private router: Router, private representanteService: RepresentanteService) {}
 
   ngOnInit() {
-      this.clientesCadastradosService.getClientsMini().then((data) => {
-          this.cliente = data;
+      this.usuarioService.buscarUsuarios().subscribe((data: any) => {
+          this.clientes = data;
+      });
+
+      this.representanteService.buscarRepresentantes().subscribe((data: any) => {
+          this.representantes = data;
       });
   }
 
-  hideDialog() {
-    this.clientDialog = false;
-    this.submitted = false;
-}
-
-editClient(): void {
-  this.router.navigate(['/login']);
-}
-
-visible: boolean = false;
-
-showDialog() {
+  editCliente(cliente: any) {
     this.visible = true;
-}
+    this.cliente = {...cliente};
+  }
+
+  saveCliente() {
+    this.visible = false;
+
+    this.usuarioService.atualizarUsuario(this.cliente).subscribe(() => {
+      this.cliente = {};
+      this.usuarioService.buscarUsuarios().subscribe((data: any) => {
+        this.clientes = data;
+      });
+    });
+  }
+
+  showTabelaPrecos(cliente: any) {
+    switch (cliente.tabelaPreco) {
+      case 'A':
+        return 'Preço capital';
+      case 'B':
+        return 'Preço interior';
+      case 'C':
+        return 'Preço capital promoção';
+      case 'D':
+        return 'Preço interior promoção';
+      default:
+        return 'Sem tabela de preços';
+    }
+  }
 }
 
 

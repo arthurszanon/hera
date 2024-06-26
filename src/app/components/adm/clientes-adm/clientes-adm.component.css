@@ -3,3 +3,9 @@
     margin: 0 auto 2rem auto;
     display: block;
 }
+
+.p-dialog-content{
+  display: flex !important;
+  justify-content: center !important;
+  width: 100%;
+}
