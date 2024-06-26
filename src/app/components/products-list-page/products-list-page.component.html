@@ -8,7 +8,7 @@
   <div class="produtos-container">
     <h1>{{categoria}}</h1>
     <div class="produtos-cards" >
-      <p-card *ngFor="let produto of produtos" class="produto-card" [header]="produto.descricao" [subheader]="isLogged ? ((produto.preco | currency:'BRL') || '') : ''" [style]="{ width: '300px' }">
+      <p-card *ngFor="let produto of produtos" class="produto-card" [header]="produto.descricao" [subheader]="isLogged ? ((verPreco(produto) | currency:'BRL') || '') : ''" [style]="{ width: '300px' }">
         <ng-template pTemplate="header">
           <img alt="Card" [src]="produto.imagemPrincipal || '../../../assets/No-Image-Placeholder.png'" [pTooltip]="produto.descricao"/>
         </ng-template>

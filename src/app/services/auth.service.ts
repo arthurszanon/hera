@@ -29,5 +29,6 @@ export class AuthService {
 
   setToken(token: string) {
     localStorage.setItem('token', token);
+    localStorage.setItem('logged', 'true');
   }
 }

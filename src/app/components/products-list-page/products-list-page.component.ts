@@ -101,4 +101,22 @@ export class ProductsListPageComponent {
     }
     this.produtosService.addToCart(this.carrinhoPayload);
   }
+
+  verPreco(produto: any){
+    const tabelaPreco = localStorage.getItem('tabelaPreco');
+    if(tabelaPreco) {
+      switch (tabelaPreco) {
+        case 'A':
+          return produto.valorCapital;
+        case 'B':
+          return produto.valorInterior;
+        case 'C':
+          return produto.valorCapitalPromocao;
+        case 'D':
+          return produto.valorCapitalPromocao;
+        default:
+          return produto.valorCapital;
+      }
+    }
+  }
 }
