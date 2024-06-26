@@ -13,6 +13,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { produtos } from '../../../interfaces/produtos';
 import { Imagem } from '../../../interfaces/Imagem';
 import { ProdutoService } from '../../../services/produtos.service';
+import {InputTextModule} from 'primeng/inputtext';
 
 @Component({
   selector: 'app-imagens-adm',
@@ -29,6 +30,7 @@ import { ProdutoService } from '../../../services/produtos.service';
     ToolbarModule,
     FileUploadModule,
     RouterLink,
+    InputTextModule,
     
   ],
   templateUrl: './imagens-adm.component.html',

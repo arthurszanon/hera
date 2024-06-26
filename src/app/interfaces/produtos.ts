@@ -1,13 +1,17 @@
 import {Imagem} from './Imagem';
 
 export interface produtos{
-    id: number,
-    code: string,
-    name: string,
-    description: string,
-    image: string,
-    price: number,
-    category: string,
-    quantity: number,
-    imagens: Imagem[]
+    id: string;
+    descricao: string;
+    descricaoSite: string;
+    unidade: string;
+    peso: string;
+    valorCapital: number;
+    valorCapitalPromocao: number;
+    valorInterior: number;
+    valorInteriorPromocao: number;
+    categoria: string;
+    subCategoria: string;
+    imagens: string[];
+    tags: string[];
 }
