@@ -19,20 +19,6 @@ interface Column {
   styleUrl: './clientes-cadastrados.component.css',
   providers: [ClientesCadastradosService]
 })
-export class ClientesCadastradosComponent implements OnInit{
-  files!: TreeNode[];
+export class ClientesCadastradosComponent {
 
-  cols!: Column[];
-
-  constructor(private clientesCadastradosComponent: ClientesCadastradosService) {}
-
-  ngOnInit() {
-      this.clientesCadastradosComponent.getFilesystem().then((files) => (this.files = files));
-      this.cols = [
-          { field: 'name', header: 'Nome' },
-          { field: 'size', header: 'Tamanho' },
-          { field: 'type', header: 'Tipo' },
-          { field: '', header: '' }
-      ];
-  }
 }

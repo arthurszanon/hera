@@ -9,6 +9,8 @@ import { ClientesCadastradosComponent } from './components/clientes-cadastrados/
 import { ShopComponent } from './components/shop/shop.component';
 import {AuthGuard} from './guard/auth.guard';
 import {CadastroComponent} from './components/cadastro/cadastro.component';
+import { ClientesAdmComponent } from './components/adm/clientes-adm/clientes-adm.component';
+import { ImagensAdmComponent } from './components/adm/imagens-adm/imagens-adm.component';
 
 
 export const routes: Routes = [
@@ -50,4 +52,12 @@ export const routes: Routes = [
       path: "shop",
       component: ShopComponent
   },
+  {
+    path: "clientes-adm",
+    component: ClientesAdmComponent
+},
+{
+    path: "imagens-adm",
+    component: ImagensAdmComponent
+},
 ];
