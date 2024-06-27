@@ -19,13 +19,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
 import {DropdownModule} from 'primeng/dropdown';
 import {RepresentanteService} from '../../../services/representante.service';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 @Component({
   selector: 'app-clientes-adm',
   standalone: true,
   imports: [TableModule, CommonModule, ButtonModule, DialogModule, ConfirmDialogModule,
-    FormsModule, InputNumberModule, ToastModule, ToolbarModule, RouterLink, FileUploadModule, InputTextModule, RippleModule, DropdownModule,],
+    FormsModule, InputNumberModule, ToastModule, ToolbarModule, RouterLink, FileUploadModule, InputTextModule, RippleModule, DropdownModule, CheckboxModule,],
   templateUrl: './clientes-adm.component.html',
   styles: [
     `:host ::ng-deep .p-dialog .product-image {
@@ -75,7 +76,30 @@ export class ClientesAdmComponent implements OnInit {
   saveCliente() {
     this.visible = false;
 
-    this.usuarioService.atualizarUsuario(this.cliente).subscribe(() => {
+    if (this.cliente.id) {
+      this.usuarioService.atualizarUsuario(this.cliente).subscribe(() => {
+        this.cliente = {};
+        this.usuarioService.buscarUsuarios().subscribe((data: any) => {
+          this.clientes = data;
+        });
+      });
+    } else {
+      this.usuarioService.salvarUsuario(this.cliente).subscribe(() => {
+        this.cliente = {};
+        this.usuarioService.buscarUsuarios().subscribe((data: any) => {
+          this.clientes = data;
+        });
+      });
+    }
+  }
+
+  addCliente() {
+    this.cliente = {};
+    this.visible = true;
+  }
+
+  removeCliente(cliente: any) {
+    this.usuarioService.deletarUsuario(cliente).subscribe(() => {
       this.cliente = {};
       this.usuarioService.buscarUsuarios().subscribe((data: any) => {
         this.clientes = data;

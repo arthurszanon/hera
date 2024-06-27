@@ -13,13 +13,15 @@ import {FormsModule} from '@angular/forms';
 import {MessageModule} from 'primeng/message';
 import {Router} from '@angular/router';
 import {ProdutoService} from '../../services/produtos.service';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  providers: [ProdutoService],
+  providers: [ProdutoService, AuthService],
   imports: [
     MenubarModule,
     CommonModule,
@@ -33,6 +35,7 @@ import {ProdutoService} from '../../services/produtos.service';
     ButtonModule,
     FormsModule,
     MessageModule,
+    OverlayPanelModule,
     // BuscarComponent,
   ]
 })
@@ -51,14 +54,6 @@ export class HeaderComponent implements OnInit{
       'label': 'produtos',
       'icon': 'pi pi-fw pi-shopping-cart',
       'routerLink': ['/produtos'],
-    },
-    {
-      'label': 'Login',
-      'routerLink': ['/login'],
-    },
-    {
-      'label': 'Cadastrar',
-      'routerLink': ['/cadastro'],
     },
   ];
 
@@ -84,12 +79,38 @@ export class HeaderComponent implements OnInit{
   }
 
   isLogged = localStorage.getItem('logged') === 'true';
+  isAdmin = localStorage.getItem('isAdmin') === 'true';
 
-  constructor (private router: Router, private produtoService: ProdutoService) {}
+  constructor (private router: Router, private produtoService: ProdutoService, private authService: AuthService) {}
 
   ngOnInit() {
     if(localStorage.getItem('cart')) {
       this.products = JSON.parse(localStorage.getItem('cart') || '{}');
+    }
+    if(this.isAdmin){
+      this.items.push(
+        {
+          'label': 'ADMIN',
+          'icon': 'pi pi-fw pi-lock',
+          'items': [
+            {
+              'label': 'Cadastro Produtos',
+              'icon': 'pi pi-fw pi-shopping-cart',
+              'routerLink': ['/imagens-adm'],
+            },
+            {
+              'label': 'Cadastro Clientes',
+              'icon': 'pi pi-fw pi-user',
+              'routerLink': ['/clientes-adm'],
+            },
+            {
+              'label': 'Ver Representantes',
+              'icon': 'pi pi-fw pi-tags',
+              'routerLink': ['/categorias'],
+            },
+          ]
+        },
+      )
     }
   }
 
@@ -132,5 +153,12 @@ export class HeaderComponent implements OnInit{
     // }, () => {
     //   this.orcamentoLoading = false;
     // });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }

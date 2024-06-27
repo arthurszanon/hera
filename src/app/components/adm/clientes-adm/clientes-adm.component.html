@@ -21,6 +21,11 @@
                         (input)="dt.filterGlobal($event.target, 'contains')"
                         placeholder="Procurar..." />
                 </span>
+                <p-button
+                    label="Adicionar Cliente"
+                    icon="pi pi-plus"
+                    class="p-button-outlined"
+                    (click)="addCliente()" />
             </div>
         </ng-template>
         <ng-template pTemplate="header">
@@ -41,6 +46,7 @@
                     Representante <p-sortIcon field="category" />
                 </th>
                 <th></th>
+              <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-cliente>
@@ -71,6 +77,17 @@
                         severity="success"
                         (click)="editCliente(cliente)" />
                 </td>
+              <td>
+                <p-button
+                  *ngIf="cliente.nome !== 'ROOT'"
+                  pRipple
+                  icon="pi pi-trash"
+                  class="mr-2"
+                  [rounded]="true"
+                  [outlined]="true"
+                  severity="danger"
+                  (click)="removeCliente(cliente)" />
+              </td>
             </tr>
         </ng-template>
         <ng-template pTemplate="summary">
@@ -131,6 +148,15 @@
                     optionValue="id"
                     placeholder="Selecione uma tabela" />
                 </div>
+                <div class="field flex align-items-center gap-1">
+                  <div style="display:flex; align-items: center; justify-content: center">
+                    <p-checkbox
+                      [(ngModel)]="cliente.isAdmin"
+                      [binary]="true"
+                      inputId="binary" />
+                    <label style="margin-left:10px" for="binary">Admin</label>
+                  </div>
+                </div>
             </ng-template>
             <ng-template pTemplate="footer">
                 <div class="flex justify-content-between">
@@ -138,11 +164,13 @@
                         label="Cancelar"
                         icon="pi pi-times"
                         class="p-button-text"
+                        severity="secondary"
                         (click)="visible = false" />
                     <p-button
                         label="Salvar"
                         icon="pi pi-check"
                         class="p-button-text"
+                        severity="success"
                         (click)="saveCliente()" />
                 </div>
             </ng-template>

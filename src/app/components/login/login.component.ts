@@ -10,7 +10,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { PasswordModule } from 'primeng/password';
 import {FormsModule} from '@angular/forms';
 import {MessageService} from 'primeng/api';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {ToastModule} from 'primeng/toast';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {AuthService} from '../../services/auth.service';
@@ -28,7 +28,9 @@ import {AuthService} from '../../services/auth.service';
     PasswordModule,
     ToastModule,
     NgIf,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    RouterLink,
+    NgClass
   ],
   providers: [AuthService, MessageService],
   templateUrl: './login.component.html',
@@ -58,17 +60,17 @@ export class LoginComponent {
     const user = { email: this.email, senha: this.senha };
     this.authService.login(user).subscribe(response => {
       this.loading = false;
-      console.log(response);
+      localStorage.setItem('user', JSON.stringify(response));
       localStorage.setItem('tabelaPreco', response.tabelaPreco);
-      // Salve o token no localStorage
+      localStorage.setItem('isAdmin', response.isAdmin);
       this.authService.setToken(response.token);
-      // Redirecione o usuário para a página protegida ou faça outras ações
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/produtos']).then(r => {
+        window.location.reload();
+      });
     }, error => {
       this.loading = false;
       console.error(error);
       this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Email ou senha incorretos' });
-      // Mostre uma mensagem de erro para o usuário
     });
   }
 }

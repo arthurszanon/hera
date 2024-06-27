@@ -9,7 +9,7 @@
       <div style="display:flex; align-items:center">
         <input type="text" pInputText placeholder="Procurar" class="w-full p-2 border-round-xl border-1" style="margin-right:20px" />
         <i class="pi pi-shopping-cart" style="font-size: 20px; margin-right: 20px; cursor: pointer;" pBadge [value]="products.length" severity="danger" (click)="showDialog()"></i>
-        <p-button icon="pi pi-user" [rounded]="true" [text]="true" [style]="{'color': '#222222', 'marginRight':'10px'}" routerLink="/login" [outlined]="true"/>
+        <p-button icon="pi pi-user" [rounded]="true" [text]="true" [style]="{'color': '#222222', 'marginRight':'10px'}" (click)="overlayPanelUser.toggle($event)" [outlined]="true"/>
       </div>
     </ng-template>
   </p-menubar>
@@ -60,4 +60,14 @@
       </div>
     </ng-template>
   </p-dialog>
+
+<!--  overlay de perfil-->
+  <p-overlayPanel #overlayPanelUser>
+    <div class="flex flex-column gap-2">
+<!--      <p-button label="Perfil" icon="pi pi-user" [style]="{'width': '100%'}" (click)="router.navigate(['/perfil'])"></p-button>-->
+      <p-button *ngIf="!isLogged" label="Login" icon="pi pi-sign-in" [style]="{'width': '100%'}" routerLink="/login"></p-button>
+      <p-button *ngIf="isLogged" label="Sair" icon="pi pi-sign-out" [style]="{'width': '100%'}" (click)="logout()"></p-button>
+    </div>
+  </p-overlayPanel>
+
 </div>
