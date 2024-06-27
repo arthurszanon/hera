@@ -14,13 +14,16 @@ import { NgModel } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { FileUploadModule } from 'primeng/fileupload';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 
 @Component({
   selector: 'app-clientes-adm',
   standalone: true,
   imports: [TableModule, CommonModule, ButtonModule,DialogModule,ConfirmDialogModule,
-    FormsModule,InputNumberModule,ToastModule,ToolbarModule,RouterLink, FileUploadModule,],
+    FormsModule,InputNumberModule,ToastModule,ToolbarModule,RouterLink, FileUploadModule,
+    InputTextModule,],
   templateUrl: './clientes-adm.component.html',
   styles: [
     `:host ::ng-deep .p-dialog .product-image {

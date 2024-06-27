@@ -3,12 +3,12 @@
         [value]="produto"
         [rows]="10"
         [paginator]="true"
-        [globalFilterFields]="['nome', 'product.nome', 'product.representante']"
+        [globalFilterFields]="['produto.descricao']"
         [tableStyle]="{ 'min-width': '75rem' }"
         [(selection)]="selectedProducts"
         [rowHover]="true"
         dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} produtos"
         [showCurrentPageReport]="true"
     >
         <ng-template pTemplate="caption">
@@ -18,7 +18,7 @@
                     <input 
                         pInputText 
                         type="text" 
-                        (input)="dt.filterGlobal($event.target, 'contains')" 
+                    (input)="dt.filterGlobal($event.target, 'contains')" 
                         placeholder="Procurar..." />
                 </span>
             </div>
