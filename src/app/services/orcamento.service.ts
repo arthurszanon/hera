@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class OrcamentoService {
 
-  private readonly urlBase: string = 'http://localhost:8087/api';
+  private readonly urlBase: string = 'http://https://lldsv5ipw3.execute-api.us-east-1.amazonaws.com/dev/api';
 
   constructor(private http: HttpClient) { }
 
