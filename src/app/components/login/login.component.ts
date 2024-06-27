@@ -59,6 +59,7 @@ export class LoginComponent {
     this.authService.login(user).subscribe(response => {
       this.loading = false;
       console.log(response);
+      localStorage.setItem('tabelaPreco', response.tabelaPreco);
       // Salve o token no localStorage
       this.authService.setToken(response.token);
       // Redirecione o usuário para a página protegida ou faça outras ações

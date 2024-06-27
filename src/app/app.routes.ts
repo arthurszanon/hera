@@ -11,7 +11,7 @@ import {AuthGuard} from './guard/auth.guard';
 import {CadastroComponent} from './components/cadastro/cadastro.component';
 import { ClientesAdmComponent } from './components/adm/clientes-adm/clientes-adm.component';
 import { ImagensAdmComponent } from './components/adm/imagens-adm/imagens-adm.component';
-
+import {ProductsListPageComponent} from './components/products-list-page/products-list-page.component';
 
 export const routes: Routes = [
   {
@@ -61,4 +61,12 @@ export const routes: Routes = [
     path: "imagens-adm",
     component: ImagensAdmComponent
 },
+  {
+    path: 'produtos',
+    component: ProductsListPageComponent
+  },
+  {
+    path: 'produtos/:categoria',
+    component: ProductsListPageComponent
+  },
 ];

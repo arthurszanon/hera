@@ -1,5 +1,5 @@
 <div class="card">
-  <p-menubar [model]="items"  routerLink="">
+  <p-menubar [model]="items">
     <ng-template pTemplate="start" >
       <a routerLink="" >
         <img src="./assets/logo.png"  class="logo" />
@@ -7,10 +7,57 @@
     </ng-template>
     <ng-template pTemplate="end">
       <div style="display:flex; align-items:center">
-        <input type="text" pInputText placeholder="Procurar" class="w-full p-2 border-round-xl border-1" />
-        <!--            <i class="pi pi-shopping-cart" style="font-size: 20px; margin-right: 20px; cursor: pointer;" pBadge [value]="products.length" severity="danger" (click)="showDialog()"></i>-->
+        <input type="text" pInputText placeholder="Procurar" class="w-full p-2 border-round-xl border-1" style="margin-right:20px" />
+        <i class="pi pi-shopping-cart" style="font-size: 20px; margin-right: 20px; cursor: pointer;" pBadge [value]="products.length" severity="danger" (click)="showDialog()"></i>
         <p-button icon="pi pi-user" [rounded]="true" [text]="true" [style]="{'color': '#222222', 'marginRight':'10px'}" routerLink="/login" [outlined]="true"/>
       </div>
     </ng-template>
   </p-menubar>
+
+  <!--  CART-->
+  <p-dialog header="Header" [(visible)]="cartVisible" [modal]="true" [style]="{ width: '40rem', height:'100vh' }"
+            [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" position="right" [draggable]="false" [resizable]="false" [dismissableMask]="true">
+    <ng-template pTemplate="header">
+      <div class="inline-flex align-items-center justify-content-center gap-2">
+        <h2 class="titulo" >Seu Carrinho</h2>
+      </div>
+    </ng-template>
+    <div [style]="{marginTop:'20px'}">
+      <div class="card" style="border: 1px solid black; border-radius: 10px; overflow: hidden">
+        <p-dataView #dv [value]="products">
+          <ng-template pTemplate="list" let-products>
+            <div class="grid grid-nogutter">
+              <div class="col-12" *ngFor="let item of products; let first = first">
+                <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4" [ngClass]="{ 'border-top-1 surface-border': !first }">
+                  <img style="width: 80px" [src]="item.imagemURL || '../../../assets/No-Image-Placeholder.png'" [alt]="item.nome" />
+                  <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+                    <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                      <div class="text-l font-bold text-900">{{ item.nome }}</div>
+                      <div class="flex align-items-center gap-3">
+                                        <span class="flex align-items-center gap-2">
+                                            <span class="font-semibold">Quantidade:</span>
+                                            <span>{{ item.quantidade + (item.quantidade > 1 ? ' unidades' : ' unidade') }}</span>
+                                        </span>
+                      </div>
+                    </div>
+                    <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                      <span *ngIf="isLogged" class="text-l font-semibold">{{ isLogged ? (item.preco | currency: 'BRL') : 'R$--,--'  }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-dataView>
+      </div>
+    </div>
+    <ng-template pTemplate="footer" style="margin-top:20px">
+      <div class="flex justify-content-between" [style]="{marginTop:'20px'}">
+        <p-button icon="pi pi-times" label="Limpar Carrinho"
+                  severity="danger" (click)="clearCart()"></p-button>
+        <p-button icon="pi pi-check" label="Finalizar Orçamento" pAutoFocus [autofocus]="true"
+                  severity="success" (click)="enviarOrcamento()" [loading]="orcamentoLoading"></p-button>
+      </div>
+    </ng-template>
+  </p-dialog>
 </div>
