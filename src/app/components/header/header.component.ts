@@ -106,7 +106,12 @@ export class HeaderComponent implements OnInit{
             {
               'label': 'Ver Representantes',
               'icon': 'pi pi-fw pi-tags',
-              'routerLink': ['/categorias'],
+              'routerLink': ['/'],
+            },
+            {
+              'label': 'Ver Orcamentos',
+              'icon': 'pi pi-fw pi-tags',
+              'routerLink': ['/'],
             },
           ]
         },
