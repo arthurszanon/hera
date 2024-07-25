@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://https://lldsv5ipw3.execute-api.us-east-1.amazonaws.com/dev/api/auth'; // Atualize para a URL do seu backend
+  private apiUrl = 'http://100.25.45.34:8080/api/auth'; // Atualize para a URL do seu backend
 
   constructor(private http: HttpClient) { }
 

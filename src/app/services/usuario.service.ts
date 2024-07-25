@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  private readonly urlBase: string = 'http://https://lldsv5ipw3.execute-api.us-east-1.amazonaws.com/dev/api';
+  private readonly urlBase: string = 'http://100.25.45.34:8080/api';
 
   constructor(private http: HttpClient) { }
 
